@@ -21,8 +21,3 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-aliyun:
-  sms:
-    regionId: default
-    accessKeyId: LTAI5tFv1JR2y59Gx4dbYXQD
-    secret: bCZNufXMRAuUD1bglzYf6as6ocBSLc
