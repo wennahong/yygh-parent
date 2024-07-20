@@ -21,7 +21,7 @@ public class DictController {
     @Autowired
     private DictService dictService;
 
-    @GetMapping("findByDictCode/{dictCode}")
+    @GetMapping("/findByDictCode/{dictCode}")
     public Result findByDictCode(@PathVariable String dictCode) {
         List<Dict> list = dictService.findByDictCode(dictCode);
         return Result.ok(list);

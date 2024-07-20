@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -90,6 +91,22 @@ public class HospitalServiceImpl implements HospitalService {
             return hospital.getHosname();
         }
         return null;
+    }
+
+    @Override
+    public List<Hospital> findByHosName(String hosname) {
+        return hospitalRepository.findHospitalByHosnameLike(hosname);
+    }
+
+    @Override
+    public Map<String, Object> item(String hoscode) {
+        Map<String, Object> map = new HashMap<>();
+        Hospital hospital = this.getByHoscode(hoscode);
+        this.setHospitalHosType(hospital);
+        map.put("hospital", hospital);
+        map.put("bookingRule", hospital.getBookingRule());
+        hospital.setBookingRule(null);
+        return map;
     }
 
     private void setHospitalHosType(Hospital hospital) {

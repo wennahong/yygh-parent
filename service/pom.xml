@@ -16,6 +16,7 @@
         <module>service-user</module>
         <module>service-hospital</module>
         <module>service-cmn</module>
+        <module>service-sms</module>
     </modules>
 
     <properties>

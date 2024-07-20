@@ -1,17 +1,16 @@
-package com.iteva.yygh.hosp;
+package com.iteva.yygh.user;
 
-import com.iteva.yygh.cmn.client.DictFeignClient;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = "com.iteva")
-@EnableFeignClients(clients = {DictFeignClient.class})
-public class HospitalServiceApplication {
+@ComponentScan("com.iteva")
+@EnableFeignClients
+public class UserServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(HospitalServiceApplication.class, args);
+        SpringApplication.run(UserServiceApplication.class, args);
     }
 }
